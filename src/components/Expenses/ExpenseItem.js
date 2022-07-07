@@ -14,7 +14,7 @@ const ExpenseItem= (props) => {
     value assigned to the first element.
     */
     const [title, setTitle] = useState(props.title);
-    console.log('New State:' + title);
+    //console.log('New State:' + title);
 
     const clickHandler = ()=>{
         //Won't be executed immediately until this component function is re-executed...

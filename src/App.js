@@ -29,6 +29,18 @@ const App = () => {
     },
   ];
 
+  const addExpenseHandler = (expense)=>{
+    
+    console.log(expense);
+  };
+
+  return (
+    <div>
+      <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
+      <Expenses expenses={expenses}></Expenses>
+    </div>
+  );
+
   //Before JSX...
   // return React.createElement(
   //   'div', 
@@ -38,12 +50,7 @@ const App = () => {
   // );
   
   //After JSX...
-  return (
-    <div>
-      <NewExpense></NewExpense>
-      <Expenses expenses={expenses}></Expenses>
-    </div>
-  );
+ 
 }
 
 export default App;
