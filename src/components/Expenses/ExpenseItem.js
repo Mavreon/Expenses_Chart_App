@@ -23,6 +23,7 @@ const ExpenseItem= (props) => {
     };
 
     return(
+        <li>
         <Card className='expense-item'>
            <ExpenseDate date={props.date}></ExpenseDate>
             <div className='expense-item__description'>
@@ -32,6 +33,7 @@ const ExpenseItem= (props) => {
             {/* Just point to the name of the function not state it directly */}
             <button onClick={clickHandler}>Change Title</button>
         </Card>
+        </li>
     );
 }
 
