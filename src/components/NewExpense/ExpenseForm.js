@@ -35,7 +35,27 @@ const ExpenseForm=(props)=>{
         setEnteredTitle('');
         setEnteredAmount('');
         setEnteredDate('');
+
+        onCancelHandler();
     };
+
+    const [canCancel, setCanCancel] = useState(true);
+
+    const onCancelHandler = ()=>{
+        setCanCancel(true);
+    };
+    const onAddhandler = ()=>{
+        setCanCancel(false);
+    };
+
+    if(canCancel)
+    {
+        return (
+            <div className="new-expense__add">
+                <button onClick={onAddhandler}>Add New Expense</button>
+            </div>
+        );
+    }
 
     return(
         <form onSubmit={submitHandler}>
@@ -54,6 +74,7 @@ const ExpenseForm=(props)=>{
                 </div>
             </div>
             <div className="new-expense__actions">
+                <button onClick={onCancelHandler}>Cancel</button>
                 <button type="submit">Add Expense</button>
             </div>
         </form>

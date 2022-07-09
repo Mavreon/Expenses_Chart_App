@@ -16,12 +16,6 @@ const ExpenseItem= (props) => {
     const [title, setTitle] = useState(props.title);
     //console.log('New State:' + title);
 
-    const clickHandler = ()=>{
-        //Won't be executed immediately until this component function is re-executed...
-        setTitle('Updated!');
-        //console.log(title);
-    };
-
     return(
         <li>
         <Card className='expense-item'>
@@ -30,8 +24,6 @@ const ExpenseItem= (props) => {
                 <h2>{title}</h2>
                 <div className='expense-item__price'>${props.amount}</div>
             </div>
-            {/* Just point to the name of the function not state it directly */}
-            <button onClick={clickHandler}>Change Title</button>
         </Card>
         </li>
     );
